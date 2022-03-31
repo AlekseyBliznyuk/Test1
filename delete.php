@@ -1,7 +1,8 @@
 <?php
 
 if(isset($_POST["id"])) {
-    $db = mysqli_connect("localhost","root","","a1qa");
+    $InfoClass = new InputOperations();
+    $db = $InfoClass->connectDatabase();
     if(!$db) {
         echo "Error: " . mysqli_connect_error();
     }

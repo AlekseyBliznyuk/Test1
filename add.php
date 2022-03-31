@@ -10,7 +10,8 @@ echo "<form action='show.php' method='post'>
 
 if(isset($_POST["fio"]) && isset($_POST["special"]) && isset($_POST["work"]) && isset($_POST["age"]) && isset($_POST["family_status"])
     && isset($_POST["experience"])) {
-    $db = mysqli_connect("localhost","root","","a1qa");
+    $InfoClass = new InputOperations();
+    $db = $InfoClass->connectDatabase();
     if($db->connect_error) {
         print("Error: " . $db->connect_error);
     }
